@@ -89,7 +89,6 @@ const observeSteps = () => {
       smoothScroll(anchor.getAttribute('href'));
     });
   });
- 
   
   // Parallax Effect on Mouse Move
   document.addEventListener('mousemove', (e) => {
@@ -111,25 +110,7 @@ const observeSteps = () => {
         scrollTrigger: { trigger: section, start: 'top 80%', toggleActions: 'play none none reverse' },
       });
     });
-  
-    // Logo, Navigation, Main Content Animation
-    // gsap.from('.logo', { opacity: 0, x: -50, duration: 1, ease: 'power2.out' });
-    // gsap.from('.nav-links a, .hire-btn', {
-    //   opacity: 0,
-    //   y: -30,
-    //   duration: 0.8,
-    //   stagger: 0.2,
-    //   ease: 'power1.out',
-    //   delay: 0.5,
-    // });
-    // gsap.from('.main-content h1, .main-content p', {
-    //   opacity: 0,
-    //   y: 20,
-    //   duration: 1,
-    //   stagger: 0.3,
-    //   ease: 'power2.out',
-    //   delay: 0.3,
-    // });
+
   
     // Button Hover Animation
     gsap.utils.toArray('.hire-btn, .view-project, .see-examples, .project-idea__button, .footer__button').forEach((button) => {
@@ -209,49 +190,21 @@ const observeSteps = () => {
     });
   });
   
-//   // Hero Section Animations
-//   document.addEventListener('DOMContentLoaded', () => {
-//     gsap.registerPlugin(ScrollTrigger);
-  
-//     gsap.to('.text-container', {
-//       opacity: 1,
-//       x: 0,
-//       duration: 0.8,
-//       ease: 'power2.out',
-//       scrollTrigger: {
-//         trigger: '.text-container',
-//         start: 'top 80%',
-//         end: 'top 20%',
-//         scrub: true,
-//         toggleActions: 'play none none reverse',
-//       },
-//     });
-  
-//     gsap.to('.hero-section', {
-//       borderColor: '#2ecc71',
-//       borderWidth: '10px',
-//       ease: 'none',
-//       scrollTrigger: {
-//         trigger: '.hero-section',
-//         start: 'top top',
-//         end: 'bottom bottom',
-//         scrub: true,
-//         toggleActions: 'play none none reverse',
-//       },
-//     });
-//   });
-  
-  // Smooth Scroll for Navigation Links
-  const navLinks = document.querySelectorAll('.nav-link');
-  
-  navLinks.forEach((link) => {
-    link.addEventListener('click', (event) => {
-      event.preventDefault();
-      const targetId = event.target.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
-      targetElement.scrollIntoView({ behavior: 'smooth' });
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+});
+
+// Close mobile menu when clicking a link
+document.querySelectorAll('.nav-link, .hire-btn').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
     });
-  });
+});
   
   // Custom Cursor
   const cursor = document.querySelector('.custom-cursor .cursor-outer');
@@ -272,37 +225,6 @@ const observeSteps = () => {
     innerCursor.classList.remove('click');
   });
   
-
-
-
-
-
-
-
-
-
-
-
-//   gsap.registerPlugin(ScrollTrigger);
-
-// gsap.to(".text", {
-//   scrollTrigger: {
-//     trigger: ".text",
-//     start: "top 80%",
-//     end: "bottom 20%",
-//     toggleClass: "reveal"
-//   },
-//   duration: 1,
-//   ease: "power2.out"
-// });
-
-
-
-
-
-
-
-
 // script.js
 document.addEventListener('DOMContentLoaded', () => {
     // Add animation classes when page loads
@@ -325,5 +247,82 @@ document.addEventListener('DOMContentLoaded', () => {
             highlight.style.transform = 'scale(1)';
         });
     });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Enhanced hover animations for badges
+  const badges = document.querySelectorAll('.badge');
+  
+  badges.forEach(badge => {
+      badge.addEventListener('mouseover', function() {
+          // Pause the floating animation when hovered
+          this.style.animationPlayState = 'paused';
+          
+          // Add a subtle scale effect
+          this.style.transform = 'translateY(-5px) rotate(8deg) scale(1.1)';
+      });
+      
+      badge.addEventListener('mouseout', function() {
+          // Resume the floating animation
+          this.style.animationPlayState = 'running';
+          
+          // Reset transforms
+          this.style.transform = '';
+      });
+      
+      // Add click ripple effect
+      badge.addEventListener('click', function(e) {
+          let ripple = document.createElement('div');
+          ripple.className = 'ripple';
+          this.appendChild(ripple);
+          
+          let rect = this.getBoundingClientRect();
+          let size = Math.max(rect.width, rect.height);
+          ripple.style.width = ripple.style.height = size + 'px';
+          
+          ripple.style.left = e.clientX - rect.left - size/2 + 'px';
+          ripple.style.top = e.clientY - rect.top - size/2 + 'px';
+          
+          setTimeout(() => ripple.remove(), 600);
+      });
+  });
+  
+  // Smooth scroll for the "Say hello!" button
+  const ctaButton = document.querySelector('.cta-button');
+  ctaButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+          targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+          });
+      }
+  });
+});
+
+document.querySelectorAll('.blog-link').forEach(link => {
+  link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const href = link.getAttribute('href');
+      document.querySelector(href).scrollIntoView({
+          behavior: 'smooth'
+      });
+  });
+});
+
+// Add animation to quick links on page load
+document.addEventListener('DOMContentLoaded', () => {
+  const links = document.querySelectorAll('.quick-link');
+  links.forEach((link, index) => {
+      link.style.opacity = '0';
+      link.style.transform = 'translateY(20px)';
+      setTimeout(() => {
+          link.style.transition = 'all 0.5s ease';
+          link.style.opacity = '1';
+          link.style.transform = 'translateY(0)';
+      }, 100 * index);
+  });
 });
 
