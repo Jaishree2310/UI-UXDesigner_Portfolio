@@ -23,11 +23,7 @@ const observeSteps = () => {
   
   document.addEventListener('DOMContentLoaded', observeSteps);
   
-  // See Examples Button Hover Effect
-  document.querySelectorAll('.see-examples').forEach((button) => {
-    button.addEventListener('mouseover', () => (button.style.transform = 'scale(1.05)'));
-    button.addEventListener('mouseout', () => (button.style.transform = 'scale(1)'));
-  });
+  
   
   // Photo Item Scroll Animation and Hover Effect
   document.addEventListener('DOMContentLoaded', () => {
@@ -325,4 +321,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 100 * index);
   });
 });
+
+
+
+
+
+
 

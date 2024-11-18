@@ -12,18 +12,6 @@ body {
     padding: 2rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* Base styles */
 .sticky-nav {
     display: flex;
@@ -242,31 +230,29 @@ body {
     box-shadow: 0 5px 15px rgba(236, 72, 153, 0.3);
 } 
 
-.main-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 60vh;
-    text-align: center;
-    position: relative;
-}
-
-/* Add this to your styles.css */
 .process-container {
     margin-top: 2rem;
     padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the steps horizontally */
+    width: 100%; /* Full width */
+    max-width: 800px; /* Optional: limit maximum width */
+    margin-left: auto; /* Center the container itself */
+    margin-right: auto; /* Center the container itself */
 }
 
 .process-step {
     display: flex;
     margin-bottom: 3rem;
     position: relative;
+    width: 100%; /* Ensure full width */
+    max-width: 700px; /* Optional: limit step width */
 }
 
 .step-number {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;  /* Reduced from 2.5rem */
+    height: 2rem; /* Reduced from 2.5rem */
     border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 50%;
     display: flex;
@@ -277,12 +263,13 @@ body {
     font-weight: bold;
     margin-right: 2rem;
     z-index: 2;
+    font-size: 0.9rem; /* Adjusted font size to match smaller circle */
 }
 
 .step-line {
     position: absolute;
-    left: 1.25rem;
-    top: 2.5rem;
+    left: 1rem; /* Adjusted to match smaller circle */
+    top: 2rem; /* Adjusted to match smaller circle */
     bottom: -3rem;
     width: 2px;
     background: rgba(255, 255, 255, 0.1);
@@ -330,58 +317,64 @@ body {
     line-height: 1.6;
 }
 
-.see-examples {
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
-    padding: 0.5rem 1.5rem;
-    border-radius: 999px;
-    cursor: pointer;
-    font-size: 0.875rem;
-    transition: all 0.3s ease;
-}
-
-.see-examples:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-
-/* Add this to your existing CSS for the gradient effect */
-svg {
-    width: 100%;
-    height: 100%;
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+/* Add this to extend the line to the last step (if there's a 4th step) */
+.process-step:last-child .step-line {
+    display: none; /* Hide the line for the very last step */
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
+    .process-container {
+        padding: 1rem;
+        width: 90%; /* Slightly narrower on small screens */
     }
     
-    .section-title {
-        font-size: 2rem;
+    .process-step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .step-number {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .step-line {
+        left: 50%;
+        top: 3.5rem;
+    }
+}
+
+.featured-projects h2 {
+    text-align: center; /* Centers the text horizontally */
+    width: 100%; /* Ensures full width */
+    margin-bottom: 2rem; /* Adds some space below the heading */
+    color: white; /* Optional: sets text color if not already defined */
+    font-size: 2.5rem; /* Optional: adjust size as needed */
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+    .featured-projects h2 {
+        font-size: 2rem; /* Slightly smaller on mobile */
+        padding: 0 1rem; /* Adds some padding on sides for smaller screens */
     }
 }
 
 
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap'); */
 
+
+
+
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap'); */
 .text-container {
   width: 100%;
   overflow: hidden;
-  position: relative;
+  position: absolute;
+  align-items: center;
 }
 
 .text-wrapper {
@@ -415,13 +408,6 @@ svg {
   }
 }
 
-
-
-
-
-
-
-
 .about-me {
     padding: 80px 0;
     background-color: #151515;
@@ -444,11 +430,11 @@ svg {
     transform: translateY(20px);
     animation: fadeInUp 0.6s ease-in-out 0.2s forwards;
     font-family: 'Playfair Display', serif;
-    color: #d5156f;
+    color: #f9f6f7;
   }
   
   .header h4 {
-    color: #6ecdf6;
+    color: #d682e7;
     margin-bottom: 40px;
     opacity: 0;
     font-size: 20px;
@@ -464,7 +450,7 @@ svg {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.6s ease-in-out 0.4s forwards;
-    color: #6f6e6e;
+    color: #bdbdbd;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
@@ -504,10 +490,118 @@ svg {
     }
   }
 
+.hero-section {
+    /* Flex container to center and distribute content horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Outer section padding - reduced from 60px to 40px for tighter layout */
+    padding: 40px 10px;
+    
+    /* Dark background color for the hero section */
+    background-color: #151515;
+}
 
+.hero-container {
+    /* Flex layout to position image and text side by side */
+    display: flex;
+    align-items: center;
+    
+    /* Maximum width to prevent overly stretched layout */
+    max-width: 1200px;
+    width: 100%;
+    
+    /* Space between image and text - can be easily adjusted */
+    gap: 40px; 
+}
 
+.image-container {
+    /* Occupy 40% of container width, align text to right */
+    flex: 0 0 40%;
+    text-align: right;
+    
+    /* Minimal padding for slight breathing room */
+    padding-right: 10px; 
+}
 
+.hero-image {
+    /* Responsive image sizing */
+    max-width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    
+    /* Aesthetic touches */
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
 
+.text-container {
+    /* Occupy remaining 60% of container width */
+    flex: 0 0 60%;
+    
+    /* Minimal padding for slight breathing room */
+    padding-left: 10px; 
+}
+
+.text-container h2 {
+    /* Header styling */
+    color: #f1f1f1;
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+.text-container p {
+    /* Paragraph styling for readability */
+    color: #6f6e6e;
+    font-size: 24px;
+    line-height: 1.6;
+}
+
+/* Color highlights for specific text spans */
+.highlight-purple { color: #d5156f; }
+.highlight-green { color: #4CAF50; }
+.highlight-pink { color: #FF69B4; }
+.highlight-orange { color: #FFA500; }
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .hero-container {
+        /* Stack image and text vertically on mobile */
+        flex-direction: column;
+        text-align: center;
+        
+        /* Reduce gap between elements */
+        gap: 20px; 
+    }
+    
+    .image-container, .text-container {
+        /* Full width in mobile view */
+        flex: 0 0 100%;
+        text-align: center;
+        
+        /* Remove side paddings */
+        padding-right: 0;
+        padding-left: 0;
+    }
+    
+    .hero-image {
+        /* Smaller image on mobile */
+        max-height: 300px;
+        margin-bottom: 20px;
+    }
+    
+    .text-container h2 {
+        /* Smaller font sizes for mobile */
+        font-size: 28px;
+    }
+    
+    .text-container p {
+        font-size: 16px;
+    }
+}
+ 
 /* Photo Grid Styles */
 .photo-grid {
     display: grid;
@@ -782,11 +876,14 @@ body {
     transition: transform 0.2s;
 }
 
-  * {
+ * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+
+
 
 body {
     background-color: #0a0a0a;
@@ -959,6 +1056,10 @@ h3 {
         transform: translateY(0);
     }
 }
+
+
+
+
 
 
 /* Hero Section Layout */
@@ -1184,6 +1285,7 @@ h3 {
     line-height: 1.1;
     margin-bottom: 1.5rem;
     letter-spacing: -0.02em;
+    text-align: left;
 }
 
 .footer-text p {
@@ -1309,10 +1411,6 @@ h3 {
     opacity: 1;
 }
 
-
-
-
-
 /* Adjusted float animation */
 @keyframes float {
     0% { transform: translateY(0px); }
@@ -1355,25 +1453,26 @@ h3 {
 }
 
 
-
-
-
 .blog-section {
     padding: 4rem 2rem;
     margin-top: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #1a1a1a;
     color: #ffffff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
 }
 
 .blog-container {
     max-width: 1200px;
     margin: 0 auto;
+    text-align: left;
 }
 
 .blog-header {
     margin-bottom: 3rem;
+    text-align: center;
 }
 
 .blog-title {
@@ -1381,32 +1480,43 @@ h3 {
     color: #ff4b4b;
     margin-bottom: 1rem;
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 0.5rem;
 }
 
 .pencil-icon {
     font-size: 2rem;
-    /* transform: rotate(-30deg); */
     display: inline-block;
 }
 
 .blog-description {
-    font-size: 1.1rem;
+
+    font-size: 18px;
     line-height: 1.6;
-    color: #cccccc;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.3s ease-in-out 0.2s forwards;
+    color: #bdbdbd;
     max-width: 800px;
-    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .blog-cta {
     font-size: 1.2rem;
     font-style: italic;
-    color: #8ab4f8;
+    color: #7C3AED;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.3s ease-in-out 0.2s forwards;
+    
 }
 
 .blog-cta a {
-    color: #8ab4f8;
+    color: #e1e5ec;
     text-decoration: none;
     position: relative;
     transition: color 0.3s ease;
@@ -1439,6 +1549,7 @@ h3 {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .quick-link {
@@ -1451,7 +1562,7 @@ h3 {
 }
 
 .quick-link:hover {
-    background-color: #ff4b4b;
+    background-color: #7C3AED;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(255, 75, 75, 0.2);
 }
