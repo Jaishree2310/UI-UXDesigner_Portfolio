@@ -350,15 +350,15 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   });
 
-  // Theme Toggle Setup
-  themeToggle.textContent = '🌓 Toggle Theme';
-  themeToggle.classList.add('theme-toggle-btn');
-  document.querySelector('.sticky-nav .nav-links').appendChild(themeToggle);
+  // // Theme Toggle Setup
+  // themeToggle.textContent = '🌓 Toggle Theme';
+  // themeToggle.classList.add('theme-toggle-btn');
+  // document.querySelector('.sticky-nav .nav-links').appendChild(themeToggle);
 
-  // Theme Toggle Logic
-  themeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      document.body.classList.toggle('light-mode');
+  // // Theme Toggle Logic
+  // themeToggle.addEventListener('click', () => {
+  //     document.body.classList.toggle('dark-mode');
+  //     document.body.classList.toggle('light-mode');
       
       // Optional: Store user preference
       const currentMode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
@@ -374,7 +374,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Default to dark mode
       document.body.classList.add('dark-mode');
   }
-});
+
 
 
 
