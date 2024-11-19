@@ -322,7 +322,59 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const workCards = document.querySelectorAll('.work-card');
+  const themeToggle = document.createElement('button');
 
+  // Project Filtering Logic
+  filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+          const filter = button.getAttribute('data-filter');
+          
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+
+          workCards.forEach(card => {
+              const category = card.getAttribute('data-category');
+              if (filter === 'all' || category === filter) {
+                  card.style.display = 'block';
+                  card.style.opacity = '1';
+              } else {
+                  card.style.opacity = '0';
+                  setTimeout(() => {
+                      card.style.display = 'none';
+                  }, 300);
+              }
+          });
+      });
+  });
+
+  // Theme Toggle Setup
+  themeToggle.textContent = '🌓 Toggle Theme';
+  themeToggle.classList.add('theme-toggle-btn');
+  document.querySelector('.sticky-nav .nav-links').appendChild(themeToggle);
+
+  // Theme Toggle Logic
+  themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      document.body.classList.toggle('light-mode');
+      
+      // Optional: Store user preference
+      const currentMode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+      localStorage.setItem('theme-preference', currentMode);
+  });
+
+  // Check Stored Theme Preference
+  const storedTheme = localStorage.getItem('theme-preference');
+  if (storedTheme) {
+      document.body.classList.remove('dark-mode', 'light-mode');
+      document.body.classList.add(`${storedTheme}-mode`);
+  } else {
+      // Default to dark mode
+      document.body.classList.add('dark-mode');
+  }
+});
 
 
 
