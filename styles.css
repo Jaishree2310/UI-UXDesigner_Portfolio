@@ -319,7 +319,7 @@ body {
 
 /* Add this to extend the line to the last step (if there's a 4th step) */
 .process-step:last-child .step-line {
-    display: none; /* Hide the line for the very last step */
+    bottom: none; /* Hide the line for the very last step */
 }
 
 /* Responsive adjustments */
@@ -378,7 +378,7 @@ body {
 }
 
 .text-wrapper {
-  animation: horizontal-text 3s linear infinite;
+  animation: horizontal-text 5s linear infinite;
   display: flex;
   align-items: center;
   white-space: nowrap;
