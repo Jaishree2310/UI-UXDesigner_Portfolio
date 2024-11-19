@@ -1868,3 +1868,14 @@ h3 {
     }
 }
   
+
+.no-highlight-link {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Keeps the color the same as surrounding text */
+}
+
+.no-highlight-link:hover {
+    text-decoration: none; /* Prevents underline on hover */
+    color: inherit; /* Ensures no color change on hover */
+}
+
