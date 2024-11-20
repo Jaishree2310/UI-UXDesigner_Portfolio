@@ -1531,33 +1531,51 @@ h3 {
     transform-origin: bottom left;
 }
 
-.quick-links {
-    margin-top: 2rem;
+
+
+
+
+
+
+.my-work {
     display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
 }
 
-.quick-link {
-    padding: 0.75rem 1.5rem;
-    background-color: #333333;
-    border-radius: 4px;
-    text-decoration: none;
-    color: #ffffff;
-    transition: all 0.3s ease;
+.work-container {
+    width: 100%;
+    max-width: 1200px;  /* Adjust as needed for the max container width */
+    padding: 20px;
 }
 
-.quick-link:hover {
-    background-color: #7C3AED;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 75, 75, 0.2);
+.section-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
+h2 {
+    font-size: 2rem;  /* Adjust for mobile screens */
+    text-align: center;
+    margin: 0;
+}
 
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.5rem;  /* Adjust font size for tablets */
+    }
+}
 
-
-
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.2rem;  /* Adjust font size for small screens */
+    }
+}
 
 
 
@@ -1567,10 +1585,6 @@ h3 {
 .work-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: 
-        "main main"
-        "card1 card2"
-        "card3 card4";
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -1582,7 +1596,7 @@ h3 {
     height: 400px;
     position: relative;
     transition: transform 0.6s;
-    overflow: hidden; /* Ensure the image doesn't overflow the card */
+    overflow: hidden;
 }
 
 .work-card:hover {
@@ -1622,12 +1636,32 @@ h3 {
 .work-card-front img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Maintain the aspect ratio and cover the area */
+    object-fit: cover;
     transition: transform 0.6s;
 }
 
 .work-card:hover .work-card-front img {
     transform: scale(1.1);
+}
+
+.work-card-back {
+    background: linear-gradient(
+        -45deg, 
+        var(--accent-color-light), 
+        #6a11cb, 
+        #2575fc, 
+        #6a11cb
+    );
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
 
 .work-card-back h3 {
@@ -1656,61 +1690,6 @@ h3 {
     box-shadow: 0 8px 15px rgba(76, 75, 75, 0.2);
 }
 
-@media (max-width: 1024px) {
-    .work-grid {
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-            "main"
-            "card1"
-            "card2"
-            "card3"
-            "card4";
-    }
-
-    .work-card:nth-child(1) {
-        height: 500px;
-    }
-
-    .work-card-front img {
-        object-fit: contain; /* Ensure images are contained within the card */
-    }
-}
-
-@media (max-width: 600px) {
-    .work-grid {
-        padding: 1rem;
-        gap: 1rem;
-    }
-
-    .work-card {
-        height: 300px;
-    }
-
-    .work-card-front img {
-        object-fit: contain; /* Ensure images are contained within the card */
-    }
-}
-
-.work-card-back {
-    background: linear-gradient(
-        -45deg, 
-        var(--accent-color-light), 
-        #6a11cb, 
-        #2575fc, 
-        #6a11cb
-    );
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-    transform: rotateY(180deg);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
 @keyframes gradientBG {
     0% {
         background-position: 0% 50%;
@@ -1723,7 +1702,37 @@ h3 {
     }
 }
 
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .work-grid {
+        grid-template-columns: 1fr;
+    }
 
+    .work-card {
+        height: 400px;
+    }
+
+    .work-card-front img {
+        object-fit: cover;
+    }
+} 
+ 
+@media (max-width: 600px) {
+    .work-grid {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .work-card {
+        height: 300px;
+        width: 300px;
+       
+    }
+
+    .work-card-front img {
+        object-fit: cover;
+    }
+} 
 
 
 
