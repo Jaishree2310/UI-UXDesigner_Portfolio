@@ -362,21 +362,26 @@ body {
   overflow: hidden;
   position: absolute;
   align-items: center;
+  
 }
 
 .text-wrapper {
-  animation: horizontal-text 5s linear infinite;
+  animation: horizontal-text 12s linear infinite;
   display: flex;
   align-items: center;
   white-space: nowrap;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
+  padding: auto;
+  /* padding-left: 1%;
+  padding-right: 1%; */
 }
 
 .text-wrapper span {
   display: flex;
   align-items: center;
   font-size: 24px;
+  padding: 4rem 2rem;
 }
 
 .text-wrapper span::after {
