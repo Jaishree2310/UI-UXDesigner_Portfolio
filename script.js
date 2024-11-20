@@ -282,31 +282,64 @@ document.addEventListener('DOMContentLoaded', function() {
           setTimeout(() => ripple.remove(), 600);
       });
   });
-  
+
   // Smooth scroll for the "Say hello!" button
   const ctaButton = document.querySelector('.cta-button');
   ctaButton.addEventListener('click', function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href').substring(1);
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-          targetElement.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-          });
+      const href = this.getAttribute('href');
+      if (href && !href.startsWith('mailto:')) {
+          // Prevent default behavior for non-mailto links
+          e.preventDefault();
+          
+          const targetId = href.substring(1);
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+              targetElement.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+              });
+          }
       }
   });
 });
 
+
+
+
+
+
+// document.querySelectorAll('.blog-link').forEach(link => {
+//   link.addEventListener('click', (e) => {
+//       e.preventDefault();
+//       const href = link.getAttribute('href');
+//       document.querySelector(href).scrollIntoView({
+//           behavior: 'smooth'
+//       });
+//   });
+// });
+
+
+
+
+
+
+
 document.querySelectorAll('.blog-link').forEach(link => {
   link.addEventListener('click', (e) => {
-      e.preventDefault();
       const href = link.getAttribute('href');
-      document.querySelector(href).scrollIntoView({
-          behavior: 'smooth'
-      });
+
+      // Check if the link is an internal anchor
+      if (href.startsWith('#')) {
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({
+              behavior: 'smooth'
+          });
+      } 
+      // If it's an external link, do nothing and let it redirect
   });
 });
+
 
 // Add animation to quick links on page load
 document.addEventListener('DOMContentLoaded', () => {

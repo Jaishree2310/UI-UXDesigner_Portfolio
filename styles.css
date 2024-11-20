@@ -246,13 +246,13 @@ body {
     display: flex;
     margin-bottom: 3rem;
     position: relative;
-    width: 100%; /* Ensure full width */
-    max-width: 700px; /* Optional: limit step width */
+    width: 100%; 
+    max-width: 700px; 
 }
 
 .step-number {
-    width: 2rem;  /* Reduced from 2.5rem */
-    height: 2rem; /* Reduced from 2.5rem */
+    width: 2rem; 
+    height: 2rem; 
     border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 50%;
     display: flex;
@@ -263,13 +263,13 @@ body {
     font-weight: bold;
     margin-right: 2rem;
     z-index: 2;
-    font-size: 0.9rem; /* Adjusted font size to match smaller circle */
+    font-size: 0.9rem; 
 }
 
 .step-line {
     position: absolute;
-    left: 1rem; /* Adjusted to match smaller circle */
-    top: 2rem; /* Adjusted to match smaller circle */
+    left: 1rem; 
+    top: 2rem;
     bottom: -3rem;
     width: 2px;
     background: rgba(255, 255, 255, 0.1);
@@ -311,60 +311,47 @@ body {
 }
 
 .step-content p {
-    color: #888;
+    color: #a09e9e;
     margin-bottom: 1.5rem;
     max-width: 600px;
     line-height: 1.6;
 }
 
-/* Add this to extend the line to the last step (if there's a 4th step) */
+
 .process-step:last-child .step-line {
-    bottom: none; /* Hide the line for the very last step */
+    bottom: none; 
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .process-container {
         padding: 1rem;
-        width: 90%; /* Slightly narrower on small screens */
+        width: 90%; 
     }
     
     .process-step {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        flex-direction: row; /* Changed from column to maintain horizontal layout */
+        align-items: flex-start; /* Align items to the top */
+        text-align: left;
+        padding-left: 1rem; /* Add some padding from the left edge */
     }
     
     .step-number {
-        margin-right: 0;
-        margin-bottom: 1rem;
+        margin-right: 2rem; /* Keep the same spacing as desktop */
+        margin-bottom: 0; /* Remove bottom margin since we're back to horizontal */
     }
     
     .step-line {
-        left: 50%;
-        top: 3.5rem;
+        left: calc(1rem + 1rem); /* Adjust for the padding-left + center of number */
+        top: 2rem; /* Same as desktop */
+        bottom: -3rem; /* Same as desktop */
+    }
+    
+    .step-content {
+        flex: 1;
+        padding-right: 1rem; /* Add some padding on the right */
     }
 }
-
-.featured-projects h2 {
-    text-align: center; /* Centers the text horizontally */
-    width: 100%; /* Ensures full width */
-    margin-bottom: 2rem; /* Adds some space below the heading */
-    color: white; /* Optional: sets text color if not already defined */
-    font-size: 2.5rem; /* Optional: adjust size as needed */
-}
-
-/* Responsive adjustment for smaller screens */
-@media (max-width: 768px) {
-    .featured-projects h2 {
-        font-size: 2rem; /* Slightly smaller on mobile */
-        padding: 0 1rem; /* Adds some padding on sides for smaller screens */
-    }
-}
-
-
-
-
 
 
 
