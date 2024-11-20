@@ -1581,7 +1581,6 @@ h2 {
 
 
 
-
 .work-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1589,14 +1588,19 @@ h2 {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+    justify-items: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .work-card {
     perspective: 1000px;
     height: 400px;
+    width: 100%;
     position: relative;
     transition: transform 0.6s;
     overflow: hidden;
+    max-width: 550px; /* Add max-width to prevent cards from getting too wide */
 }
 
 .work-card:hover {
@@ -1660,17 +1664,17 @@ h2 {
     justify-content: center;
     align-items: center;
     color: white;
-    padding: 20px;
+    padding: 2rem;
     text-align: center;
 }
 
 .work-card-back h3 {
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
     font-size: 1.5rem;
 }
 
 .work-card-back p {
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
     line-height: 1.6;
     opacity: 0.8;
 }
@@ -1678,11 +1682,12 @@ h2 {
 .case-study-btn {
     background-color: rgb(99, 99, 99);
     color: var(--accent-color-light);
-    padding: 10px 20px;
+    padding: 0.75rem 1.5rem;
     text-decoration: none;
     border-radius: 25px;
     font-weight: bold;
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .case-study-btn:hover {
@@ -1706,38 +1711,44 @@ h2 {
 @media (max-width: 1024px) {
     .work-grid {
         grid-template-columns: 1fr;
+        max-width: 600px;
+        padding: 1.5rem;
+        gap: 1.5rem;
     }
 
     .work-card {
         height: 400px;
+        width: 100%;
     }
+}
 
-    .work-card-front img {
-        object-fit: cover;
-    }
-} 
- 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
     .work-grid {
         padding: 1rem;
         gap: 1rem;
+        align-items: center;
     }
 
     .work-card {
         height: 300px;
         width: 300px;
-       
+        align-items: center;
+        /* left: 1px; */
+        right: 29px;
     }
 
-    .work-card-front img {
-        object-fit: cover;
+    .work-card-back {
+        padding: 1.5rem;
     }
-} 
 
+    .work-card-back h3 {
+        font-size: 1.25rem;
+    }
 
-
-
-
+    .case-study-btn {
+        padding: 0.5rem 1.25rem;
+    }
+}
 
 
 /* Achievements Section - Dark Theme */
