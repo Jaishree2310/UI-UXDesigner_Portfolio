@@ -396,7 +396,7 @@ body {
 }
 @media screen and (max-width: 768px) {
     .text-wrapper span {
-        font-size: clamp(14px, 3.5vw, 20px);
+        font-size: clamp(20px, 3.5vw, 20px);
     }
     
     .text-wrapper span::after {
@@ -1485,7 +1485,7 @@ h3 {
 
 .blog-title {
     font-size: 2.5rem;
-    color: #ff4b4b;
+    color: #fefefe;
     margin-bottom: 1rem;
     display: flex;
     justify-content: center;
