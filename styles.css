@@ -394,6 +394,27 @@ body {
     transform: translateX(-50%);
   }
 }
+@media screen and (max-width: 768px) {
+    .text-wrapper span {
+        font-size: clamp(14px, 3.5vw, 20px);
+    }
+    
+    .text-wrapper span::after {
+        margin: 0 5px;
+    }
+} 
+
+@media screen and (max-width: 480px) {
+    .text-wrapper {
+        animation-duration: 3s;
+    }
+    
+    .text-wrapper span {
+        font-size: clamp(12px, 3vw, 16px);
+    }
+}
+
+
 
 .about-me {
     padding: 80px 0;
