@@ -1815,7 +1815,7 @@ h2 {
 
 
 
-
+/* 
 @media (max-width: 640px) {
     .work-grid {
         padding: 1rem;
@@ -1825,15 +1825,15 @@ h2 {
     
     .work-card {
         height: 300px;
-        width: 100%; /* Changed from fixed 300px to full width */
-        max-width: 300px; /* Limit maximum width */
-        margin: 0 auto; /* Center the card */
+        width: 100%; 
+        max-width: 300px; 
+        margin: 0 auto; 
     }
 
     .work-card-front img {
         width: 100%;
         height: 100%;
-        object-fit: contain; /* Change this from 'cover' to 'contain' */
+        object-fit: contain; 
         object-position: center;
     }
     
@@ -1849,6 +1849,58 @@ h2 {
         padding: 0.5rem 1.25rem;
     }
 }
+ */
+
+
+
+
+
+
+
+ @media (max-width: 640px) {
+    .work-grid {
+        padding: 1rem;
+        gap: 1rem;
+        align-items: center;
+    }
+    
+    .work-card {
+        height: 350px; /* Increased from 300px */
+        width: 100%; /* Changed from fixed 300px to full width */
+        max-width: 350px; /* Increased maximum width */
+        margin: 0 auto; /* Center the card */
+    }
+
+    .work-card-front img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Adjusted to maintain image aspect ratio */
+        object-position: center;
+    }
+    
+    .work-card-back {
+        padding: 1rem; /* Adjusted for better spacing on small screens */
+        font-size: 0.9rem; /* Scaled font size for responsiveness */
+    }
+    
+    .work-card-back h3 {
+        font-size: 1.4rem; /* Slightly larger heading for better readability */
+    }
+
+    .work-card-back p {
+        font-size: 0.85rem; /* Adjusted paragraph font size */
+        line-height: 1.4; /* Better spacing for small text */
+    }
+    
+    .case-study-btn {
+        padding: 0.6rem 1.5rem; /* Adjusted button size */
+        font-size: 0.85rem; /* Scaled font size */
+    }
+}
+
+
+
+
 
 
 
