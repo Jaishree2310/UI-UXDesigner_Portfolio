@@ -230,6 +230,10 @@ body {
     box-shadow: 0 5px 15px rgba(236, 72, 153, 0.3);
 } 
 
+
+
+
+
 .process-container {
     margin-top: 2rem;
     padding: 2rem 0;
@@ -365,18 +369,35 @@ body {
   
 }
 
-/* .text-wrapper {
-  animation: horizontal-text 12s linear infinite;
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-  width: 200%;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  padding: auto;
- 
-} */
+/* Container for the marquee effect */
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+  }
+  
+  /* Marquee text styling */
+  .marquee p {
+    display: inline-block;
+    animation: horizontal-text 20s linear infinite;
+    font-size: 24px;
+    padding: 4rem 2rem;
+    margin: 0;
+  }
+  
+  /* Animation for scrolling the text */
+  @keyframes scroll-text {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
 
+  
 .text-wrapper {
     display: inline-flex;
     align-items: center;
@@ -385,23 +406,25 @@ body {
     font-weight: 700;
     animation: horizontal-text 15s linear infinite;
     width: 200%; /* Double the width to ensure full scroll */
-  }
-
+    margin: 0 5%; /* Add 5% margin on both left and right sides */
+}
 
 .text-wrapper span {
   display: flex;
   align-items: center;
   font-size: 24px;
   padding: 4rem 2rem;
+  margin: 10px;
 }
 
 .text-wrapper span::after {
   content: "●";
-  margin: 0 10px;
+  margin: 10px;
   margin-bottom: 0rem;
   margin-top: 3rem;
 }
 
+/* Optional: Add keyframes for horizontal scrolling if not already defined */
 @keyframes horizontal-text {
   0% {
     transform: translateX(0);
@@ -410,6 +433,7 @@ body {
     transform: translateX(-50%);
   }
 }
+
 @media screen and (max-width: 768px) {
     .text-wrapper span {
         font-size: clamp(20px, 3.5vw, 20px);
@@ -422,7 +446,7 @@ body {
 
 @media screen and (max-width: 480px) {
     .text-wrapper {
-        animation-duration: 3s;
+        animation-duration: 8s;
     }
     
     .text-wrapper span {
