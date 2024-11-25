@@ -2208,7 +2208,7 @@ h2 {
 .solar-system {
     display: flex;
     align-items: center;
-    gap: 4vw; /* Dynamic gap based on screen width */
+    gap: 4.5vw; /* Dynamic gap based on screen width */
     overflow-x: auto;
     scroll-behavior: smooth; /* Smooth horizontal scrolling */
     padding: 20px;
@@ -2369,7 +2369,7 @@ h2 {
 /* Content Box */
 .content-box {
     background-color: #242424;
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
     max-width: 800px;
     flex-shrink: 0;
