@@ -413,3 +413,199 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+  function updateTime() {
+    const now = new Date();
+    
+    // Get hours in 24-hour format
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    let seconds = now.getSeconds();
+    
+    // Add leading zeros
+    hours = hours.toString().padStart(2, '0');
+    minutes = minutes.toString().padStart(2, '0');
+    seconds = seconds.toString().padStart(2, '0');
+    
+    // Update DOM elements
+    document.getElementById('hours').textContent = hours;
+    document.getElementById('minutes').textContent = minutes;
+    document.getElementById('seconds').textContent = seconds;
+}
+
+// Update immediately and then every second
+updateTime();
+setInterval(updateTime, 1000);
+
+// Hover effects for social links
+document.querySelectorAll('.social-links a').forEach(link => {
+    link.addEventListener('mouseenter', () => {
+        link.style.textDecoration = 'underline';
+    });
+    link.addEventListener('mouseleave', () => {
+        link.style.textDecoration = 'none';
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const planets = document.querySelectorAll('.planet');
+        const contentTitle = document.querySelector('.content-title');
+        const contentText = document.querySelector('.content-text');
+
+        const planetContent = {
+            sun: {
+                title: "Sun / Empathy",
+                text: "Empathy is at the heart of everything I do, much like the sun is the center of the solar system. I believe that to truly understand a problem, you must understand how it genuinely affects the person behind it. I was deeply inspired by a story in Creative Confidence by Tom and David Kelley. In it, a group of students designed low-cost incubators for babies in India which seemed promising, but when they traveled to India and spoke directly with the mothers, they discovered a critical flaw. These mothers didn't trust Western medicine, making the incubators ineffective in their context. This revelation profoundly influenced my approach to UX design. It taught me that without empathy and a deep understanding of the user's real-world experience solutions can miss the mark. This lesson is at the core of my design system and drives my commitment to human-centered design.",
+                color: "#FFD700"
+            },
+
+
+            mercury: {
+              title: "Mercury / Speed & Adaptation",
+              text: "In my design system, Mercury represents speed and effective communication. I value speed in adaptation and iteration, rapidly testing and refining prototypes to meet users' real needs. Effective communication is crucial, whether it's understanding users, conveying clear messages through design, or ensuring my team is aligned and working seamlessly towards a shared vision.",
+              color: "#C2CCCC"
+          },
+          venus: {
+              title: "Venus / UI",
+              text: "Named after the Roman goddess of beauty and love, Venus represents UI in my design system. Just as Venus embodies elegance and allure, UI design is a testament to my lifelong passion and love for art, which began in childhood. Exceptional UI is more than just functional; it transforms user interactions into delightful and visually captivating experiences, underscoring the importance of creating interfaces that are both beautiful and effective.",
+              color: "#C8A2C8"
+          },
+          earth: {
+            title: "Earth / Future Thinking",
+            text: "Earth symbolizes a focus on the future. Chosen because it represents our home and the deep interest I have about its future and the future of humankind. My constant reflection on emerging challenges—such as the ethics of AI, the potential of space transportation, the prospect of living in space, and the urgent need to address environmental issues—drives my approach to design. Just as Earth is our home and the center of our current reality, future thinking is about envisioning and addressing the problems on the horizon. This mindset reflects a commitment to proactive and innovative solutions, aiming to shape a better future by tackling tomorrows challenges with foresight and creativity",
+            color: "#008000"
+          },
+          mars: {
+            title: "Mars / Problem Solving",
+            text:"Mars, known as the Red Planet and associated with the Roman god of war, symbolizes problem-solving. Just as Mars represents strength and determination, problem-solving in design requires resilience and a strategic approach. My work is driven by a desire to tackle complex challenges head-on, whether it's understanding user pain points, navigating the intricacies of a project, or finding innovative solutions to seemingly insurmountable obstacles. Mars embodies the spirit of facing challenges with creativity and perseverance, ensuring that every design decision contributes to overcoming barriers and delivering effective, user-centered solutions.",
+            color: "brown"
+          },
+          jupiter: {
+            title: "Jupiter/ Curiosity and AI",
+            text: "In my design system, I associate Jupiter with ideation, which is fitting since Jupiter is my favorite planet and ideation is my favorite part of the design process. Just as Jupiter’s vast size and gravitational pull bring everything into alignment, ideation acts as the central force that transforms insights into creative solutions. I enjoy spending time deeply analyzing and understanding the problem, and from there, ideation opens up endless possibilities. It’s where we take all the research and insights gathered and explore ways to solve problems in meaningful, user-centered ways. This stage is critical because it allows for the freedom to experiment with innovative ideas that can inspire and delight users. For me, ideation is the driving force behind design—expansive, powerful, and filled with potential, just like Jupiter itself",
+            color: "#C9E4CA"
+          },
+          saturn: {
+            title: "Saturn/ Structure and Balance",
+            // text: "Saturn, the sixth planet from the Sun, represents UX research in my design
+            // system. Just as Saturn is known for its stunning ring system, UX research is the foundation upon which
+            // all design decisions are built. I believe that understanding users' needs, behaviors, and motivations is
+            // crucial to creating effective solutions. Through rigorous research, I uncover valuable insights that inform
+            // design decisions, ensuring that every solution is grounded in user needs and centered around their
+            // experiences.",
+            text: "Saturn, known for its stunning and orderly rings, symbolizes structure and balance in our design system. Just as Saturn’s rings are meticulously arranged, creating a sense of harmony and order, structure in design ensures that every element works together cohesively. Balance is about creating designs that are aesthetically pleasing and functionally sound, where every component is thoughtfully placed and serves a purpose. Saturn reminds us that a well-structured and balanced design is crucial for providing users with an intuitive and seamless experience, where form and function exist in perfect harmony",
+            color: "#8B9467"
+          },
+          uranus: {
+            title: "Uranus/ Perspective & Unconventional Thinking",
+            text: "Uranus, known for its unique tilt and distinct blue hue, symbolizes perspective and unconventional thinking. Just as Uranus stands out for its atypical rotation and striking appearance, embracing unconventional thinking allows us to approach problems from fresh angles and break away from traditional patterns. Perspective involves seeing challenges from different viewpoints and considering diverse solutions, fostering creativity and innovation. Uranus reminds us that by valuing unique perspectives and exploring non-traditional approaches, we can uncover new opportunities and develop groundbreaking designs.",
+          color: "#8B9467"
+          },
+          neptune: {
+            // title: "Neptune/ Imagination & Storytelling",
+            // text: "Neptune, the farthest planet from the Sun, represents imagination and storytelling in
+            // my design system. Just as Neptune is associated with the ocean's vastness and mystery, imagination
+            // is the boundless and creative force that brings ideas to life. Through storytelling, we can convey
+            // complex information in a way that resonates with users, making it more relatable and memorable.
+            // Imagination and storytelling are essential in design, as they enable us to craft experiences that are
+            // both engaging and meaningful.",
+            title: "Neptune/ Exploration & Innovation",
+            text: "Neptune, the distant and mysterious planet. Just as Neptune is a symbol of the unknown, pushing the boundaries of what we understand, exploration in design encourages us to venture into uncharted territory, seeking out new ideas and unconventional solutions. Innovation is about challenging the status quo and daring to think differently, much like how Neptune invites us to explore the depths of creativity. Neptune reminds us that true innovation comes from a willingness to explore the unknown, embrace uncertainty, and push the limits of whats possible in design.",
+            color: "#032B44"
+            },
+
+    };
+
+
+        planets.forEach(planet => {
+            planet.addEventListener('click', () => {
+                const planetType = planet.dataset.planet;
+                const content = planetContent[planetType];
+                
+                // Reset all planets
+                planets.forEach(p => p.style.backgroundColor = '');
+                
+                if (content) {
+                    planet.style.backgroundColor = content.color;
+                    contentTitle.textContent = content.title;
+                    contentText.textContent = content.text;
+                }
+            });
+        });
+
+
+        const solarSystem = document.getElementById("solarSystem");
+        const leftArrow = document.getElementById("leftArrow");
+        const rightArrow = document.getElementById("rightArrow");
+        
+        function scrollSolarSystem(direction) {
+            const scrollAmount = 200; // Adjust scroll distance as needed
+            solarSystem.scrollBy({
+                left: direction * scrollAmount,
+                behavior: "smooth",
+            });
+        }
+        
+        // Function to toggle the visibility of the arrows
+        function toggleArrows() {
+            const maxScrollLeft = solarSystem.scrollWidth - solarSystem.clientWidth;
+        
+            // Show or hide the left arrow
+            if (solarSystem.scrollLeft > 0) {
+                leftArrow.style.display = "flex";
+            } else {
+                leftArrow.style.display = "none";
+            }
+        
+            // Show or hide the right arrow
+            if (solarSystem.scrollLeft < maxScrollLeft) {
+                rightArrow.style.display = "flex";
+            } else {
+                rightArrow.style.display = "none";
+            }
+        }
+        
+        // Attach event listeners
+        solarSystem.addEventListener("scroll", toggleArrows);
+        window.addEventListener("resize", toggleArrows);
+        
+        // Initialize arrow visibility on page load
+        toggleArrows();
+        
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
