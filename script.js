@@ -1,27 +1,33 @@
+
+
+
+
+
+
 // Process Steps Animation
-const observeSteps = () => {
-  const steps = document.querySelectorAll('.process-step');
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
+// const observeSteps = () => {
+//   const steps = document.querySelectorAll('.process-step');
+//   const observer = new IntersectionObserver(
+//     (entries) => {
+//       entries.forEach((entry) => {
+//         if (entry.isIntersecting) {
+//           entry.target.style.opacity = '1';
+//           entry.target.style.transform = 'translateY(0)';
+//         }
+//       });
+//     },
+//     { threshold: 0.1 }
+//   );
 
-  steps.forEach((step) => {
-    step.style.opacity = '0';
-    step.style.transform = 'translateY(20px)';
-    step.style.transition = 'all 0.6s ease-out';
-    observer.observe(step);
-  });
-};
+//   steps.forEach((step) => {
+//     step.style.opacity = '0';
+//     step.style.transform = 'translateY(20px)';
+//     step.style.transition = 'all 0.6s ease-out';
+//     observer.observe(step);
+//   });
+// };
 
-document.addEventListener('DOMContentLoaded', observeSteps);
+// document.addEventListener('DOMContentLoaded', observeSteps);
 
 
 
@@ -221,6 +227,10 @@ document.addEventListener('mouseup', () => {
   innerCursor.classList.remove('click');
 });
 
+
+
+
+
 // script.js
 document.addEventListener('DOMContentLoaded', () => {
   // Add animation classes when page loads
@@ -244,86 +254,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   });
 });
-
-document.addEventListener('DOMContentLoaded', function() {
-// Enhanced hover animations for badges
-const badges = document.querySelectorAll('.badge');
-
-badges.forEach(badge => {
-    badge.addEventListener('mouseover', function() {
-        // Pause the floating animation when hovered
-        this.style.animationPlayState = 'paused';
-        
-        // Add a subtle scale effect
-        this.style.transform = 'translateY(-5px) rotate(8deg) scale(1.1)';
-    });
-    
-    badge.addEventListener('mouseout', function() {
-        // Resume the floating animation
-        this.style.animationPlayState = 'running';
-        
-        // Reset transforms
-        this.style.transform = '';
-    });
-    
-    // Add click ripple effect
-    badge.addEventListener('click', function(e) {
-        let ripple = document.createElement('div');
-        ripple.className = 'ripple';
-        this.appendChild(ripple);
-        
-        let rect = this.getBoundingClientRect();
-        let size = Math.max(rect.width, rect.height);
-        ripple.style.width = ripple.style.height = size + 'px';
-        
-        ripple.style.left = e.clientX - rect.left - size/2 + 'px';
-        ripple.style.top = e.clientY - rect.top - size/2 + 'px';
-        
-        setTimeout(() => ripple.remove(), 600);
-    });
-});
-
-// Smooth scroll for the "Say hello!" button
-const ctaButton = document.querySelector('.cta-button');
-ctaButton.addEventListener('click', function(e) {
-    const href = this.getAttribute('href');
-    if (href && !href.startsWith('mailto:')) {
-        // Prevent default behavior for non-mailto links
-        e.preventDefault();
-        
-        const targetId = href.substring(1);
-        const targetElement = document.getElementById(targetId);
-        
-        if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    }
-});
-});
-
-
-
-
-
-
-// document.querySelectorAll('.blog-link').forEach(link => {
-//   link.addEventListener('click', (e) => {
-//       e.preventDefault();
-//       const href = link.getAttribute('href');
-//       document.querySelector(href).scrollIntoView({
-//           behavior: 'smooth'
-//       });
-//   });
-// });
-
-
-
-
-
-
 
 document.querySelectorAll('.blog-link').forEach(link => {
 link.addEventListener('click', (e) => {
@@ -358,7 +288,7 @@ links.forEach((link, index) => {
 document.addEventListener('DOMContentLoaded', () => {
 const filterButtons = document.querySelectorAll('.filter-btn');
 const workCards = document.querySelectorAll('.work-card');
-const themeToggle = document.createElement('button');
+// const themeToggle = document.createElement('button');
 
 // Project Filtering Logic
 filterButtons.forEach(button => {
@@ -382,80 +312,11 @@ filterButtons.forEach(button => {
         });
     });
 });
-
-// // Theme Toggle Setup
-// themeToggle.textContent = '🌓 Toggle Theme';
-// themeToggle.classList.add('theme-toggle-btn');
-// document.querySelector('.sticky-nav .nav-links').appendChild(themeToggle);
-
-// // Theme Toggle Logic
-// themeToggle.addEventListener('click', () => {
-//     document.body.classList.toggle('dark-mode');
-//     document.body.classList.toggle('light-mode');
     
     // Optional: Store user preference
     const currentMode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
     localStorage.setItem('theme-preference', currentMode);
 });
-
-// Check Stored Theme Preference
-const storedTheme = localStorage.getItem('theme-preference');
-if (storedTheme) {
-    document.body.classList.remove('dark-mode', 'light-mode');
-    document.body.classList.add(`${storedTheme}-mode`);
-} else {
-    // Default to dark mode
-    document.body.classList.add('dark-mode');
-}
-
-
-
-
-
-
-function updateTime() {
-  const now = new Date();
-  
-  // Get hours in 24-hour format
-  let hours = now.getHours();
-  let minutes = now.getMinutes();
-  let seconds = now.getSeconds();
-  
-  // Add leading zeros
-  hours = hours.toString().padStart(2, '0');
-  minutes = minutes.toString().padStart(2, '0');
-  seconds = seconds.toString().padStart(2, '0');
-  
-  // Update DOM elements
-  document.getElementById('hours').textContent = hours;
-  document.getElementById('minutes').textContent = minutes;
-  document.getElementById('seconds').textContent = seconds;
-}
-
-// Update immediately and then every second
-updateTime();
-setInterval(updateTime, 1000);
-
-// Hover effects for social links
-document.querySelectorAll('.social-links a').forEach(link => {
-  link.addEventListener('mouseenter', () => {
-      link.style.textDecoration = 'underline';
-  });
-  link.addEventListener('mouseleave', () => {
-      link.style.textDecoration = 'none';
-  });
-});
-
-
-
-
-
-
-
-
-
-
-
 
 const planets = document.querySelectorAll('.planet');
         const contentTitle = document.querySelector('.content-title');
