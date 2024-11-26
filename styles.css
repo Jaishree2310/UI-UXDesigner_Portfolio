@@ -1651,129 +1651,48 @@ h3 {
 }
 
 .footer-text p {
-    color: #9ca3af;
+    color: #eeeeee;
     font-size: 1.25rem; /* Increased font size */
     line-height: 1.6;
     margin-bottom: 2rem;
     font-family: 'Arial', sans-serif; /* Different font for paragraph */
 }
 
-/* .cta-button {
-    background-color: #ec4899;
-    color: white;
-    padding: 1rem 2.5rem;
-    border-radius: 9999px;
-    text-decoration: none;
-    display: inline-block;
-    font-weight: bold;
-    font-size: 1.25rem;
-    transition: all 0.3s ease;
-} */
 
-/* .cta-button:hover {
-    transform: translateY(-2px);
-    background-color: #c32bff;
-    box-shadow: 0 5px 15px rgba(226, 226, 226, 0.4);
-} */
 
-/* Updated Social Badges Styles */
-.social-badges {
+
+
+
+
+
+
+
+.footer-bottom {
     display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
-    position: fixed;
-    margin-top: 1rem;
-    /* left: 0;
-    bottom: 0;
-    margin: 2rem;   */
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
 }
 
-.badge {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    border: 2px solid rgba(255, 255, 255, 0.1);
+.made-by {
+    font-size: 18px;
+    color: #f5f2f2;
+    text-align: center;
+    flex: 1;
 }
 
-/* Updated badge designs to match image */
-.badge.instagram {
-    background: white;
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
-    animation: float 3s ease-in-out infinite 0.5s;
+
+.footer-bottom a img {
+    width: 32px; /* Set the desired width */
+    height: 32px; /* Set the desired height */
+    margin: 0 10px; /* Add spacing between icons */
+    transition: transform 0.3s; /* Add hover effect */
 }
 
-.badge.behance {
-    background: white;
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
-    animation: float 3s ease-in-out infinite 1s;
-}
-
-.badge.linkedin {
-    background: white;
-    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
-    animation: float 3s ease-in-out infinite;
-}
-
-.badge.X {
-    background: white;
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
-    animation: float 3s ease-in-out infinite 1.5s;
-}
-
-/* Updated image styles */
-.badge img {
-    width: 32px;
-    height: 32px;
-    object-fit: contain;
-    transition: all 0.3s ease;
-    filter: none; /* Remove the invert filter */
-}
-
-.badge.linkedin img {
-    width: 32px;
-    height: 32px;
-}
-
-.badge:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.15);
-}
-
-.badge:hover img {
-    transform: scale(1.1);
-}
-
-/* Updated tooltip styles */
-.badge-tooltip {
-    position: absolute;
-    bottom: -35px;
-    left: 50%;
-    transform: translateX(-50%) scale(0);
-    background: white;
-    color: #1a1a1a;
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 0.875rem;
-    transition: all 0.3s ease;
-    pointer-events: none;
-    opacity: 0;
-    white-space: nowrap;
-    font-weight: 500;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.badge:hover .badge-tooltip {
-    transform: translateX(-50%) scale(1);
-    opacity: 1;
+.footer-bottom a img:hover {
+    transform: scale(1.2); /* Slightly enlarge icon on hover */
 }
 
 /* Adjusted float animation */
@@ -1793,18 +1712,7 @@ h3 {
         flex-direction: column;
         text-align: left; /* Keep text aligned left on mobile */
     }
-    
-    .social-badges {
-        justify-content: flex-start; /* Align badges to left on mobile */
-    }
-    
-    .made-with-framer {
-        position: relative;
-        margin-top: 3rem;
-        right: auto;
-        bottom: auto;
-        justify-content: center;
-    }
+  
 }
 
 @media (max-width: 480px) {
