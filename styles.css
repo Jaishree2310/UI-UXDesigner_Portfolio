@@ -1611,10 +1611,9 @@ h3 {
 
 
   /* footer.css */
+/* Structured Footer Styles */
 
-/* Import Google Fonts (optional - if you want a similar chunky font) */
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap');
-
+/* Footer Styles */
 .footer-container {
     background-color: #1a1a1a;
     padding: 4rem 2rem;
@@ -1629,7 +1628,7 @@ h3 {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Changed to align-items: flex-start to match design */
+    align-items: flex-start;
     flex-wrap: wrap;
     gap: 3rem;
 }
@@ -1641,8 +1640,8 @@ h3 {
 }
 
 .footer-text h2 {
-    color: #7a7aff;
-    font-size: 4.5rem; /* Increased font size */
+    color: #8c22c5;
+    font-size: 4.5rem;
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: 1.5rem;
@@ -1652,10 +1651,10 @@ h3 {
 
 .footer-text p {
     color: #eeeeee;
-    font-size: 18px; /* Increased font size */
+    font-size: 18px;
     line-height: 1.6;
     margin-bottom: 2rem;
-    font-family: 'Arial', sans-serif; /* Different font for paragraph */
+    font-family: 'Arial', sans-serif;
 }
 
 .footer-bottom {
@@ -1672,17 +1671,25 @@ h3 {
     color: #f5f2f2;
     text-align: center;
     flex: 1;
+    margin: 0;
+}
+
+.footer-bottom .image-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer-bottom a img {
-    width: 32px; /* Set the desired width */
-    height: 32px; /* Set the desired height */
-    margin: 0 10px; /* Add spacing between icons */
-    transition: transform 0.3s; /* Add hover effect */
+    width: 32px;
+    height: 32px;
+    margin: 0 10px;
+    transition: transform 0.3s;
 }
 
+/* Hover effect on icons */
 .footer-bottom a img:hover {
-    transform: scale(1.2); /* Slightly enlarge icon on hover */
+    transform: scale(1.2);
 }
 
 /* Adjusted float animation */
@@ -1692,7 +1699,7 @@ h3 {
     100% { transform: translateY(0px); }
 }
 
-/* Responsive styles */
+/* Responsive styles for small screens */
 @media (max-width: 768px) {
     .footer-text h2 {
         font-size: 3.5rem;
@@ -1700,9 +1707,32 @@ h3 {
     
     .footer-content {
         flex-direction: column;
-        text-align: left; /* Keep text aligned left on mobile */
+        text-align: left;
+    }
+    
+    /* Adjust footer-bottom layout for mobile screens */
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer-bottom .made-by {
+        margin-top: 1rem;
     }
   
+    .footer-bottom a img {
+        width: 28px;
+        height: 28px;
+        margin: 5px;
+    }
+    
+    /* Center the image-footer in a row */
+    .footer-bottom .image-footer {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1713,7 +1743,28 @@ h3 {
     .footer-text p {
         font-size: 1.125rem;
     }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-bottom .made-by {
+        font-size: 16px;
+        margin-top: 1rem;
+    }
+
+    .footer-bottom a img {
+        width: 25px;
+        height: 25px;
+        margin-top: 20px;
+        
+    }
 }
+
+
+
+
 
 
 
@@ -1742,6 +1793,7 @@ h3 {
     max-width: 1200px;
     margin: 0 auto;
     text-align: left;
+    padding: 0 1rem; /* Adds padding for smaller screens */
 }
 
 .blog-header {
@@ -1765,7 +1817,6 @@ h3 {
 }
 
 .blog-description {
-
     font-size: 18px;
     line-height: 1.6;
     margin-bottom: 40px;
@@ -1786,7 +1837,6 @@ h3 {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.3s ease-in-out 0.2s forwards;
-    
 }
 
 .blog-cta a {
@@ -1819,6 +1869,46 @@ h3 {
     transform-origin: bottom left;
 }
 
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .blog-title {
+        font-size: 2rem; /* Smaller title font for tablets */
+    }
+    
+    .blog-description {
+        font-size: 16px; /* Adjust font size for better readability */
+        line-height: 1.5;
+        margin-bottom: 30px;
+    }
+    
+    .blog-cta a {
+        font-size: 18px; /* Slightly smaller call-to-action font */
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-section {
+        padding: 2rem 1rem; /* Reduced padding for small screens */
+    }
+    
+    .blog-title {
+        font-size: 1.8rem; /* Smaller font size for mobile */
+        gap: 0.3rem;
+    }
+    
+    .pencil-icon {
+        font-size: 1.5rem; /* Adjust icon size for mobile */
+    }
+    
+    .blog-description {
+        font-size: 14px; /* Even smaller font size for narrow screens */
+    }
+    
+    .blog-cta a {
+        font-size: 16px; /* Small font size for links on mobile */
+    }
+}
+
 
 
 
@@ -1830,7 +1920,7 @@ h3 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 10px;
+    padding: 20px;
 }
 
 .work-container {
@@ -1847,7 +1937,7 @@ h3 {
 }
 
 h2 {
-    font-size: 2rem;  /* Adjust for mobile screens */
+    font-size: 3rem;  /* Adjust for mobile screens */
     text-align: center;
     margin: 0;
 }
@@ -1859,11 +1949,6 @@ h2 {
     }
 }
 
-@media (max-width: 480px) {
-    h2 {
-        font-size: 1.2rem;  /* Adjust font size for small screens */
-    }
-}
 
 
 
@@ -1874,11 +1959,11 @@ h2 {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     max-width: 1200px;
-    margin: 0 auto;
     padding: 2rem;
     justify-items: center;
     width: 100%;
     box-sizing: border-box;
+    margin: 0 auto;
 }
 
 .work-card {
@@ -1888,7 +1973,8 @@ h2 {
     position: relative;
     transition: transform 0.6s;
     overflow: hidden;
-    max-width: 550px; /* Add max-width to prevent cards from getting too wide */
+    max-width: 700px; /* Increased width */
+    margin: 0; /* Remove margin */
 }
 
 .work-card:hover {
@@ -1999,7 +2085,7 @@ h2 {
 @media (max-width: 1024px) {
     .work-grid {
         grid-template-columns: 1fr;
-        max-width: 600px;
+        max-width: 100%;
         padding: 1.5rem;
         gap: 1.5rem;
     }
@@ -2007,121 +2093,64 @@ h2 {
     .work-card {
         height: 400px;
         width: 100%;
+        margin: 0; /* Remove margin */
     }
 }
-
-/* @media (max-width: 640px) {
-    .work-grid {
-        padding: 1rem;
-        gap: 1rem;
-        align-items: center;
-    }
-
-    .work-card {
-        height: 300px;
-        width: 300px;
-        align-items: center;
-        
-        right: 29px;
-    }
-
-    .work-card-back {
-        padding: 1.5rem;
-    }
-
-    .work-card-back h3 {
-        font-size: 1.25rem;
-    }
-
-    .case-study-btn {
-        padding: 0.5rem 1.25rem;
-    }
-} */
-
-
-
-
-
-/* 
 @media (max-width: 640px) {
     .work-grid {
-        padding: 1rem;
+        padding: 0.5rem;
         gap: 1rem;
-        align-items: center;
+        align-items: stretch; /* Stretch cards to fill available height */
     }
     
     .work-card {
-        height: 300px;
-        width: 100%; 
-        max-width: 300px; 
-        margin: 0 auto; 
+        height: 250px; /* Reduced height to make more compact */
+        width: 100%; /* Full width of the container */
+        max-width: 100%; /* Remove maximum width constraint */
+        margin: 0; /* Remove auto margin */
     }
 
     .work-card-front img {
         width: 100%;
         height: 100%;
-        object-fit: contain; 
+        object-fit: cover; /* Changed back to cover for better visual appearance */
         object-position: center;
     }
     
     .work-card-back {
-        padding: 1.5rem;
-    }
-    
-    .work-card-back h3 {
-        font-size: 1.25rem;
-    }
-    
-    .case-study-btn {
-        padding: 0.5rem 1.25rem;
-    }
-}
- */
-
-
-
-
-
-
-
- @media (max-width: 640px) {
-    .work-grid {
-        padding: 1rem;
-        gap: 1rem;
+        padding: 0.75rem; /* Further reduced padding */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-    }
-    
-    .work-card {
-        height: 300px; /* Increased from 300px */
-        width: 100%; /* Changed from fixed 300px to full width */
-        max-width: 350px; /* Increased maximum width */
-        margin: 0 auto; /* Center the card */
-    }
-
-    .work-card-front img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain; /* Adjusted to maintain image aspect ratio */
-        object-position: center;
-    }
-    
-    .work-card-back {
-        padding: 1rem; /* Adjusted for better spacing on small screens */
-        font-size: 0.9rem; /* Scaled font size for responsiveness */
+        text-align: center;
     }
     
     .work-card-back h3 {
-        font-size: 1.4rem; /* Slightly larger heading for better readability */
+        font-size: 1.2rem; /* Slightly smaller heading */
+        margin-bottom: 0.5rem;
     }
 
     .work-card-back p {
-        font-size: 0.85rem; /* Adjusted paragraph font size */
-        line-height: 1.4; /* Better spacing for small text */
+        font-size: 0.8rem; /* Smaller paragraph text */
+        line-height: 1.4;
+        margin-bottom: 0.75rem;
     }
     
     .case-study-btn {
-        padding: 0.6rem 1.5rem; /* Adjusted button size */
-        font-size: 0.85rem; /* Scaled font size */
+        padding: 0.5rem 1rem; /* Smaller button */
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .work-grid {
+        padding: 0.25rem; /* Even less padding on very small screens */
+        gap: 0.75rem;
+    }
+
+    .work-card {
+        height: 225px; /* Further reduced height for extremely small screens */
     }
 }
 
@@ -2595,19 +2624,7 @@ h2 {
 
 
 
-/* General Container Styling for Dark Theme */
-/* .container {
-    max-width: 1800px;
-    margin: 0 auto;
-    padding: 20px;
-    padding-bottom: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #121212; /* Dark background for contrast */
-    /* color: #e0e0e0; Light text for readability */
-    /* border-radius: 15px; */
-    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); */
 
-/* } */ 
 
 /* Section Title */
 .section-title {
@@ -2620,6 +2637,7 @@ h2 {
     letter-spacing: 1px;
     margin-top: 20px;
     padding-bottom: 20px;
+    padding-top: 40px;
     
 }
 
@@ -2628,7 +2646,7 @@ h2 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Fluid grid layout */
     gap: 25px;
-    /* padding: 20px; */
+    padding: 20px;
     /* padding-bottom: 40px; */
     /* min-height: 50px; */
 
@@ -2696,6 +2714,31 @@ h2 {
 }
 
 /* Responsive Design for Mobile Phones */
+/* @media screen and (max-width: 480px) {
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .notes-grid {
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    } */
+/* 
+    .sticky-note {
+        padding: 15px;
+    }
+
+    .sticky-note h3 {
+        font-size: 1.2rem;
+    }
+
+    .sticky-note p {
+        font-size: 0.9rem;
+    }
+} */
+
+/* Responsive Design for Mobile Phones */
 @media screen and (max-width: 480px) {
     .section-title {
         font-size: 1.8rem;
@@ -2708,18 +2751,20 @@ h2 {
     }
 
     .sticky-note {
-        padding: 15px;
+        padding: 20px;
+        flex-direction: column; /* Stack children vertically */
+        align-items: flex-start; /* Align items to the start */
     }
 
     .sticky-note h3 {
         font-size: 1.2rem;
+        margin-bottom: 10px; /* Add spacing between h3 and p */
     }
 
     .sticky-note p {
         font-size: 0.9rem;
     }
 }
-
 
 
 
@@ -2796,6 +2841,8 @@ h2 {
     }
   }
   
+ 
+  
 
 
 
@@ -2816,8 +2863,46 @@ h2 {
 
 
 
-
-
+/* Base styles for all screen sizes are already defined */
+/* Responsive Design for Small Screens */
+@media (max-width: 576px) {
+    /* Skill container adjustments */
+    .skill_container {
+      padding: 0 10px; /* Reduce padding for smaller screens */
+    }
+  
+    /* Dynamic section adjustments */
+    #dynamic-section {
+      padding-top: 30px; /* Reduce padding above the section */
+    }
+  
+    #dynamic-section h2 {
+      font-size: 2rem; /* Smaller heading font size */
+      margin-bottom: 30px; /* Adjust margin for smaller screens */
+      letter-spacing: 0.5px; /* Reduce letter spacing */
+    }
+  
+    /* Skills container adjustments */
+    .skills-container {
+      gap: 15px; /* Reduce the gap between items */
+      padding: 0 10px; /* Adjust padding for the container */
+    }
+  
+    /* Skill item adjustments */
+    .skill-item {
+      font-size: 0.9rem; /* Smaller font size */
+      padding: 10px 15px; /* Smaller padding for better fit */
+      min-width: 120px; /* Reduce minimum width */
+      height: auto; /* Allow flexible height */
+      text-align: center; /* Maintain centered text */
+    }
+  
+    .skill-item:hover {
+      transform: none; /* Disable transform on hover for better usability */
+      box-shadow: none; /* Remove shadow on hover for simplicity */
+    }
+  }
+  
 
 
 
