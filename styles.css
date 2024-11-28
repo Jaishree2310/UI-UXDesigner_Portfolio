@@ -1828,7 +1828,7 @@ h3 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 20px;
+    padding: 10px;
 }
 
 .work-container {
@@ -2553,3 +2553,219 @@ h2 {
 .click-discover:hover .down-arrow {
     transform: translateY(5px);  /* Slight animation for the arrow on hover */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* General Container Styling for Dark Theme */
+/* .container {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212; /* Dark background for contrast */
+    /* color: #e0e0e0; Light text for readability */
+    /* border-radius: 15px; */
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); */
+
+/* } */ 
+
+/* Section Title */
+.section-title {
+    font-size: clamp(2rem, 3vw, 3.5rem); /* Dynamic title size */
+    margin-bottom: 20px;
+    color: #f5f5f5;
+    text-transform: capitalize;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    
+}
+
+/* Notes Grid Layout */
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Fluid grid layout */
+    gap: 25px;
+    /* padding: 20px; */
+    /* padding-bottom: 40px; */
+    /* min-height: 50px; */
+
+}
+
+/* Sticky Note Styling for Dark Theme */
+.sticky-note {
+    background: #1e1e1e; /* Darker sticky note background */
+    border: none;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.1); /* Soft shadows */
+    transition: all 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Hover Effect for Sticky Note */
+.sticky-note:hover {
+    transform: translateY(-5px); /* Smooth hover effect */
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3), -6px -6px 12px rgba(255, 255, 255, 0.15);
+}
+
+/* Sticky Note Heading */
+.sticky-note h3 {
+    font-size: 1.5rem;
+    color: #f39c12; /* Light text for heading */
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+/* Sticky Note Paragraph */
+.sticky-note p {
+    font-size: 1.2rem;
+    color: #d1d1d1; /* Lighter text for paragraph */
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Sticky Note Icon */
+.sticky-note::before {
+    content: attr(data-icon);
+    font-size: 1.8rem;
+    color: #f39c12; /* Bright color for visibility */
+    margin-right: 15px;
+    font-weight: 700;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Responsive Design for Tablets */
+@media screen and (max-width: 768px) {
+    .sticky-note {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .sticky-note h3 {
+        font-size: 1.3rem;
+        margin-right: 20px;
+    }
+}
+
+/* Responsive Design for Mobile Phones */
+@media screen and (max-width: 480px) {
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .notes-grid {
+        grid-template-columns: 1fr; /* Single column layout for small screens */
+        gap: 20px;
+    }
+
+    .sticky-note {
+        padding: 15px;
+    }
+
+    .sticky-note h3 {
+        font-size: 1.2rem;
+    }
+
+    .sticky-note p {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.skill_container {
+    width: 100%;
+    max-width: 1200px; /* Limit the width */
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Padding inside the container */
+  }
+
+#dynamic-section {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 50px; /* Space above the section */
+  }
+  
+  #dynamic-section h2 {
+    font-size: 3rem;
+    color: #ffffff; /* Heading color */
+    margin-bottom: 40px;
+    font-weight: bold; /* Bold text */
+    letter-spacing: 1px; /* Spacing between letters for a clean look */
+
+  }
+  
+  .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Increased gap for spacing */
+    justify-content: center;
+    padding: 0 15px;
+  }
+  
+  .skill-item {
+    font-size: 1.1rem;
+    color: #ccc; /* Light gray text color */
+    background-color: #1a1a1a; /* Dark background */
+    border: 2px solid #444; /* Soft border for clean lines */
+    border-radius: 30px; /* Rounded corners */
+    padding: 15px 30px; /* Larger padding for better look */
+    font-weight: 600; /* Stronger font weight */
+    /* text-transform: uppercase; Capitalize the text */
+    transition: all 0.3s ease; /* Smooth transition */
+    cursor: pointer;
+    text-align: center;
+    box-sizing: border-box; /* Prevents overflow */
+  }
+  
+  .skill-item:hover {
+    background-color: #444; /* Darker background on hover */
+    color: #fff; /* Light text color on hover */
+    border-color: #fff; /* White border on hover */
+    transform: translateY(-5px); /* Subtle hover effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Shadow effect for depth */
+  }
+  
+  @media (max-width: 768px) {
+    .skill-item {
+      font-size: 1rem; /* Adjust font size for mobile */
+      padding: 12px 20px; /* Adjust padding for mobile */
+      /* padding-bottom: 20px; */
+      margin-bottom: 20px;
+      
+      min-width: 150px; /* Ensure skill items stay consistent in size */
+      height: 50px; /* Maintain the same height */
+      text-align: center;
+    }
+  }
+  

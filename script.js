@@ -441,3 +441,40 @@ const planets = document.querySelectorAll('.planet');
         
         // Initialize arrow visibility on page load
         toggleArrows();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// what i bring to table
+
+document.addEventListener('DOMContentLoaded', () => {
+  const stickyNotes = document.querySelectorAll('.sticky-note');
+  
+  stickyNotes.forEach((note, index) => {
+      setTimeout(() => {
+          note.classList.add('active');
+      }, index * 300);
+  });
+});
+
+
+
+
+
+
+// Dynamically update the section name
+const sectionTitle = "What I Can Do"; // Change this value to update the title dynamically
+document.getElementById("section-title").textContent = sectionTitle;
+
