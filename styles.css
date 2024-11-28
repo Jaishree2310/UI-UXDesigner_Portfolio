@@ -425,7 +425,7 @@ body {
   /* Marquee text styling */
   .marquee p {
     display: inline-block;
-    animation: horizontal-text 20s linear infinite;
+    animation: horizontal-text 30s linear infinite;
     font-size: 24px;
     padding: 4rem 2rem;
     margin: 0;
@@ -490,7 +490,7 @@ body {
 
 @media screen and (max-width: 480px) {
     .text-wrapper {
-        animation-duration: 8s;
+        animation-duration: 12s;
     }
     
     .text-wrapper span {
