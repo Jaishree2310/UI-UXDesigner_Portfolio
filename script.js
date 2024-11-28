@@ -478,3 +478,14 @@ document.addEventListener('DOMContentLoaded', () => {
 const sectionTitle = "What I Can Do"; // Change this value to update the title dynamically
 document.getElementById("section-title").textContent = sectionTitle;
 
+
+
+
+
+
+
+
+
+
+
+

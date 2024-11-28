@@ -1641,7 +1641,7 @@ h3 {
 }
 
 .footer-text h2 {
-    color: #4ade80;
+    color: #7a7aff;
     font-size: 4.5rem; /* Increased font size */
     font-weight: 700;
     line-height: 1.1;
@@ -1652,20 +1652,11 @@ h3 {
 
 .footer-text p {
     color: #eeeeee;
-    font-size: 1.25rem; /* Increased font size */
+    font-size: 18px; /* Increased font size */
     line-height: 1.6;
     margin-bottom: 2rem;
     font-family: 'Arial', sans-serif; /* Different font for paragraph */
 }
-
-
-
-
-
-
-
-
-
 
 .footer-bottom {
     display: flex;
@@ -1682,7 +1673,6 @@ h3 {
     text-align: center;
     flex: 1;
 }
-
 
 .footer-bottom a img {
     width: 32px; /* Set the desired width */
@@ -1724,6 +1714,17 @@ h3 {
         font-size: 1.125rem;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 .blog-section {
@@ -1771,7 +1772,7 @@ h3 {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.3s ease-in-out 0.2s forwards;
-    color: #bdbdbd;
+    color: #e4e3e3;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
@@ -1780,7 +1781,7 @@ h3 {
 .blog-cta {
     font-size: 1.2rem;
     font-style: italic;
-    color: #7C3AED;
+    color: #f1f0f1;
     text-align: center;
     opacity: 0;
     transform: translateY(20px);
@@ -1789,9 +1790,10 @@ h3 {
 }
 
 .blog-cta a {
-    color: #e1e5ec;
+    color: #c612f3;
     text-decoration: none;
     position: relative;
+    font-size: 20px;
     transition: color 0.3s ease;
 }
 
@@ -2139,7 +2141,7 @@ h2 {
     background: linear-gradient(135deg, #121212, #1e1e1e);
     color: #e0e0e0;
     text-align: center;
-}
+} *
 
 .achievements h2 {
     font-size: 2.5rem;
@@ -2148,10 +2150,10 @@ h2 {
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 2px;
-}
+} *
 
 /* Timeline Design */
-.achievement-timeline {
+ .achievement-timeline {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2162,7 +2164,7 @@ h2 {
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    width: 80%;
+    width: 100%;
     background: #2a2a2a;
     margin: 1.5rem 0;
     padding: 1.5rem;
@@ -2183,7 +2185,7 @@ h2 {
 .achievement-item:focus {
     outline: none;
     border: 2px solid #42a5f5;
-}
+} 
 
 /* Tooltip */
 .achievement-item[data-tooltip]::after {
@@ -2209,7 +2211,7 @@ h2 {
     transform: translate(-50%, 0);
 }
 
-/* Icons */
+
 .icon-container {
     font-size: 2.5rem;
     color: #90caf9;
@@ -2237,10 +2239,10 @@ h2 {
     font-size: 1rem;
     color: #bdbdbd;
     margin: 0;
-}
+} 
 
 /* Responsive Design */
-@media (max-width: 768px) {
+    @media (max-width: 768px) {
     .achievement-item {
         flex-direction: column;
         align-items: flex-start;
@@ -2250,15 +2252,15 @@ h2 {
   
 
 .no-highlight-link {
-    text-decoration: none; /* Removes underline */
-    color: inherit; /* Keeps the color the same as surrounding text */
+    text-decoration: none; 
+    color: inherit; 
     
 }
 
 .no-highlight-link:hover {
-    text-decoration: none; /* Prevents underline on hover */
-    color: inherit; /* Ensures no color change on hover */
-}
+    text-decoration: none; 
+    color: inherit; 
+} 
 
 
 
@@ -2270,24 +2272,49 @@ h2 {
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 2px;
-    padding: 0 15px; /* Add horizontal padding */
-}
+    padding: 0 15px; 
+} 
 
 /* Media query for small screens */
 @media screen and (max-width: 768px) {
     .achievements h2 {
-        font-size: 1.8rem; /* Smaller font size on small screens */
+        font-size: 1.8rem; 
         margin-bottom: 1.5rem;
-        padding: 0 10px; /* Reduced horizontal padding */
+        padding: 0 10px; 
     }
 }
 
 /* Additional media query for extra small screens */
 @media screen and (max-width: 480px) {
     .achievements h2 {
-        font-size: 1.5rem; /* Even smaller font size on extra small screens */
+        font-size: 1.5rem; 
         margin-bottom: 1rem;
-        padding: 0 5px; /* Minimal horizontal padding */
+        padding: 0 5px; 
+    }
+}
+
+
+
+
+
+/* Achievement Content Heading (h3) */
+.achievement-content h3 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    color: #ffffff;
+}
+
+/* Media query for medium screens (e.g., tablets) */
+@media screen and (max-width: 768px) {
+    .achievement-content h3 {
+        font-size: 1.3rem; /* Reduce font size for smaller screens */
+    }
+}
+
+/* Media query for small screens (e.g., mobile phones) */
+@media screen and (max-width: 480px) {
+    .achievement-content h3 {
+        font-size: 1rem; /* Further reduce font size for mobile screens */
     }
 }
 
@@ -2525,7 +2552,7 @@ h2 {
     align-items: center;
     gap: 10px;
     font-size: 18px;
-    color: #d65eee;  /* Color for the text */
+    color: #c612f3;  /* Color for the text */
     margin-top: 0;  /* No need for margin-top */
 }
 
@@ -2539,7 +2566,7 @@ h2 {
     align-items: center;
     gap: 10px;
     font-size: 18px;
-    color: #d65eee;
+    color: #c612f3;
     margin-top: 20px;
 }
 
@@ -2630,7 +2657,7 @@ h2 {
 /* Sticky Note Heading */
 .sticky-note h3 {
     font-size: 1.5rem;
-    color: #f39c12; /* Light text for heading */
+    color: #c612f3; /* Light text for heading */
     font-weight: 600;
     margin-bottom: 10px;
     letter-spacing: 0.5px;
@@ -2638,7 +2665,7 @@ h2 {
 
 /* Sticky Note Paragraph */
 .sticky-note p {
-    font-size: 1.2rem;
+    font-size: 18px;
     color: #d1d1d1; /* Lighter text for paragraph */
     line-height: 1.6;
     margin: 0;
@@ -2769,3 +2796,28 @@ h2 {
     }
   }
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
