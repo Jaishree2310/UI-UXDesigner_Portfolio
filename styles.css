@@ -190,6 +190,9 @@ body {
     padding-top: 80px;
 }
 
+
+/* repeat---------------------------------------------------------- */
+
 .logo {
     display: flex;
     align-items: center;
@@ -809,7 +812,7 @@ body {
   
   .subtitle {
     font-size: 2.5rem;
-    color: #5e16c4;
+    color: #BB86FC;
     margin-bottom: 0.5rem;
     line-height: 1.5;
   }
@@ -1640,7 +1643,7 @@ h3 {
 }
 
 .footer-text h2 {
-    color: #8c22c5;
+    color: #BB86FC;
     font-size: 4.5rem;
     font-weight: 700;
     line-height: 1.1;
@@ -1840,7 +1843,7 @@ h3 {
 }
 
 .blog-cta a {
-    color: #c612f3;
+    color: #BB86FC;
     text-decoration: none;
     position: relative;
     font-size: 20px;
@@ -2581,7 +2584,7 @@ h2 {
     align-items: center;
     gap: 10px;
     font-size: 18px;
-    color: #c612f3;  /* Color for the text */
+    color: #BB86FC;  /* Color for the text */
     margin-top: 0;  /* No need for margin-top */
 }
 
@@ -2595,13 +2598,13 @@ h2 {
     align-items: center;
     gap: 10px;
     font-size: 18px;
-    color: #c612f3;
+    color: #BB86FC;
     margin-top: 20px;
 }
 
 .down-arrow {
     font-size: 24px;  /* Size of the arrow */
-    color: #d65eee;  /* Same color as the text */
+    color: #BB86FC;  /* Same color as the text */
     transition: transform 0.3s ease;
     margin-top: 20px;
 }
@@ -2675,7 +2678,7 @@ h2 {
 /* Sticky Note Heading */
 .sticky-note h3 {
     font-size: 1.5rem;
-    color: #c612f3; /* Light text for heading */
+    color: #BB86FC; /* Light text for heading */
     font-weight: 600;
     margin-bottom: 10px;
     letter-spacing: 0.5px;
